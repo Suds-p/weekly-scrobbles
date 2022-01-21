@@ -1,3 +1,12 @@
+#body {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid #2ac793;
+  border-radius: 20px 20px 0 0;
+  height: 900px;
+}
+
 #title {
   background: #2ac793;
   text-align: center;
@@ -7,6 +16,15 @@
   padding: 5px 0;
   margin-bottom: 20px;
   border-radius: 20px 20px 0 0;
+}
+
+.subtitle {
+  font-family: Montserrat, sans-serif;
+  font-size: 10px;
+  margin-left: 10px;
+  font-style: italic;
+  font-weight: bold;
+  color: lightslategrey;
 }
 
 .vContainer {
@@ -23,6 +41,7 @@
   text-align: center;
   padding: 20px;
   font-family: Montserrat;
+  font-weight: 300;
   flex-direction: column;
   justify-content: flex-end;
 }

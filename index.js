@@ -1,7 +1,26 @@
+/* Utility function to find date of nearest past Friday (not including today) */
+const findLastFriday = () => {
+  // Friday is day 5
+  /*
+   day: 0 1 2 3 4 5 6
+        1 2 3 4 5 6 7 (+1)
+        1 2 3 4 5 6 0 (%7)
+  -del: 2 3 4 5 6 7 1 (+1)
+   */
+  const resultDate = new Date();
+  const day = resultDate.getDay();
+  const del = ((day + 1) % 7) + 1;
+  resultDate.setDate(resultDate.getDate() - del);
+  return resultDate;
+}
+
 /* Utility function to get last.fm play counts */
 const countScrobbles = async (user) => {
   try {
-    let data = await $.get(`https://cors-anywhere.herokuapp.com/https://www.last.fm/user/${user}/library/artists?from=2022-01-14&to=2022-01-21`);
+    // TODO: Get start date as last friday
+    const start = findLastFriday().toISOString().slice(0, 10);
+    const today = new Date().toISOString().slice(0, 10);
+    let data = await $.get(`https://cors-anywhere.herokuapp.com/https://www.last.fm/user/${user}/library/artists?from=${start}&to=${today}`);
     const parser = new DOMParser();
     const htmlDoc = parser.parseFromString(data, 'text/html');
     let trs = htmlDoc.getElementsByTagName("tbody");
@@ -75,3 +94,10 @@ let main = () => {
     document.getElementById('plays2').innerHTML = count2;
   })();
 };
+
+/* Set subtitle in corner to show correct date */
+const lastFri = findLastFriday();
+const month = ["January", "February", "March", "April", "May", "June",
+"July", "August", "September", "October", "November", "December"][lastFri.getMonth()];
+document.getElementsByClassName("subtitle")[0].innerHTML = 
+  `Counting since ${month} ${lastFri.getDate()}, ${lastFri.getFullYear()}`;
