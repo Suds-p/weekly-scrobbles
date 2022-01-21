@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
@@ -19,27 +20,34 @@
     </header>
     
     <div class="main">
-      <div class="vContainer">
-        <div class="inputContainer">
-          <div class="singleInput">
-            <p>Enter your Last.fm username:</p>
-            <input type="text" id="user1">
-            <div class="resultsBody">
-              <p class="plays" id="plays1">100</p>
-              <span>total plays!</span>
+      <form onsubmit="main()">
+        <div class="vContainer">
+
+            <div class="inputContainer">
+              <div class="singleInput">
+                <p>Enter your Last.fm username:</p>
+                <input type="text" id="user1" required>
+                <div class="errorSub"></div>
+                <div class="resultsBody">
+                  <p class="plays" id="plays1">100</p>
+                  <span>total plays!</span>
+                </div>
+              </div>
+
+              <div class="singleInput">
+                <p>Enter a friend's Last.fm username:</p>
+                <input type="text" id="user2" required>
+                <div class="errorSub"></div>
+                <div class="resultsBody">
+                  <p class="plays" id="plays2">100</p>
+                  <span>total plays!</span>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="singleInput">
-            <p>Enter a friend's Last.fm username:</p>
-            <input type="text" id="user2">
-            <div class="resultsBody">
-              <p class="plays" id="plays2">100</p>
-              <span>total plays!</span>
-            </div>
-          </div>
+
+            <input id="compareBtn" type="submit" value="Compare!">
         </div>
-        <button id="compareBtn">Compare!</button>
-      </div>
+      </form>
     </div>
   </div>
 

@@ -31,6 +31,10 @@
   border-right: 3px solid gray;
 }
 
+.on .invalidInput {
+  border: 1px solid red;
+}
+
 .on .inputContainer {
   display: flex;
   justify-content: center;
@@ -54,4 +58,11 @@
   background: #4EBCFC;
   color: white;
   font-weight: bold;
+}
+
+.on .errorSub {
+  font-size: 12px;
+  color: red;
+  text-align: left;
+  height: 1rem;
 }
