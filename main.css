@@ -1,4 +1,4 @@
-.on #title {
+#title {
   background: #2ac793;
   text-align: center;
   text-transform: uppercase;
@@ -9,14 +9,14 @@
   border-radius: 20px 20px 0 0;
 }
 
-.on .vContainer {
+.vContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
 
-.on .singleInput {
+.singleInput {
   display: flex;
   max-width: 400px;
   width: 45%;
@@ -27,28 +27,28 @@
   justify-content: flex-end;
 }
 
-.on .singleInput:nth-child(1) {
+.singleInput:nth-child(1) {
   border-right: 3px solid gray;
 }
 
-.on .invalidInput {
+.invalidInput {
   border: 1px solid red;
 }
 
-.on .inputContainer {
+.inputContainer {
   display: flex;
   justify-content: center;
 }
 
-.on .plays {
+.plays {
   font-size: 28px;
 }
 
-.on .resultsBody {
+.resultsBody {
   display: none;
 }
 
-.on #compareBtn {
+#compareBtn {
   margin-top: 20px;
   width: 100%;
   max-width: 150px;
@@ -60,7 +60,7 @@
   font-weight: bold;
 }
 
-.on .errorSub {
+.errorSub {
   font-size: 12px;
   color: red;
   text-align: left;
